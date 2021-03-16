@@ -1,0 +1,3 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'endpoint-slide4vr-ssg', '--image', 'gcr.io/$PROJECT_ID/kuda-proxy', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--set-env-vars', 'KUDA_PROXY_TARGET_NAME=ssg,KUDA_CORE_ENDPOINT=ssg,KUDA_PROXY_TARGET_URL=https://slide4vr-ssg-dnb6froqha-uc.a.run.app,KUDA_CORE_FLOW=slide-upload-flow,DEV_NKLAB_PROFILE_TRACE=false,KUDA_CORE_LOCALFLOW_ENABLE=false']
