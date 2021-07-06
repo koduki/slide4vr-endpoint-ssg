@@ -1,3 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'endpoint-slide4vr-ssg', '--image', 'gcr.io/$PROJECT_ID/kuda-proxy', '--region', 'us-central1', '--platform', 'managed', '--set-env-vars', 'TARGET_URL==https://slide4vr-ssg-dnb6froqha-uc.a.run.app,USE_GOOGLE_JWT=false']
+  args: ['run', 'deploy', 'slide4vr-api', '--image', 'gcr.io/$PROJECT_ID/kuda-proxy', 
+  '--region', 'us-central1', 
+  '--allow-unauthenticated', 
+  # '--set-env-vars', 'TARGET_URL=https://slide4vr-backend-dnb6froqha-uc.a.run.app,USE_GOOGLE_JWT=false,CORS_TARGET=https://slide4vr-api-dnb6froqha-uc.a.run.app,WORKFLOW_ID=projects/slide2vr/locations/us-central1/workflows/wf_slide4vr',
+  '--platform', 'managed'
+  ]
